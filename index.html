@@ -3,35 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pesquisar Produtos</title>
+    
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <title>Makeup</title>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="search-container">
-            <input type="text" id="search-bar" placeholder="Digite aqui o que procura..." class="search-bar">
-            <button id="search-button" class="search-button">Pesquisar</button>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Os melhores produtos de beleza a sua porta!</h1>
-            <p>Descubra o universo da beleza com produtos incríveis para realçar sua maquiagem! Desde batons vibrantes até iluminadores radiantes, temos tudo para você brilhar em qualquer ocasião. Encontre sua essência, experimente novas cores e sinta-se ainda mais confiante!</p>
-            <button id="list-button" class="cta-button">Listar produtos</button>
-        </div>
-        <div class="hero-image">
-            <img src="./img/mulheres1.png" alt="Mulheres felizes">
-        </div>
-    </header>
-
-    <!-- Grid de Produtos -->
-    <div class="container">
-        <div id="product-grid" class="grid"></div>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Digite aqui o que procura..." class="search-bar">
+        <button id="search-button" class="search-button">Pesquisar</button>
     </div>
+</nav>
+
+<!-- Hero Section -->
+<header class="hero">
+    <div class="hero-content">
+        <h1>Os melhores produtos de beleza a sua porta!</h1>
+        <p>Descubra o universo da beleza com produtos incríveis para realçar sua maquiagem! Desde batons vibrantes até iluminadores radiantes, temos tudo para você brilhar em qualquer ocasião. Encontre sua essência, experimente novas cores e sinta-se ainda mais confiante!</p>
+        <button id="list-button" class="cta-button">Listar produtos</button>
+    </div>
+    <div class="hero-image">
+        <img src="./img/mulheres1.png" alt="Mulheres felizes">
+    </div>
+</header>
+
+<!-- Grid de Produtos -->
+<div class="container">
+    <div id="product-grid" class="grid"></div>
+</div>
+
+<!-- Modal -->
+<div id="product-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div id="modal-product-image" class="modal-image"></div>
+        <div class="modal-info">
+            <h2 id="modal-product-name"></h2>
+            <p id="modal-product-brand"></p>
+            <p id="modal-product-price"></p>
+            <p id="modal-product-description"></p>
+            <div class="modal-actions">
+                <a id="modal-product-link" href="#" target="_blank" class="modal-link">Ver no site oficial</a>
+                <button class="back-button">Voltar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
