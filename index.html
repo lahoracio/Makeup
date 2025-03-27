@@ -1,52 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisar Produtos</title>
     <link rel="stylesheet" href="style.css">
-   <script src="main.js" defer></script>
-    <title>MakeUp</title>
+    <script src="script.js" defer></script>
 </head>
 <body>
-   <header>
-    <nav>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Digite aqui o que procura..." class="search-bar">
+            <button id="search-button" class="search-button">Pesquisar</button>
         </div>
-        <ul class="menu" id="menu">
-            <div class="search">
-                <input type="text" id="input" placeholder="Digite aqui o que procura..">
-                <button id="buscar"> 
-                    <img src="./img/pesquisar2.png" alt="">
-                </button>
-            </div>
-            <!-- <li>
-                <img src="./img/batom.jpg" alt="">
-                <span>batom</span>
-            </li>
-            <li>
-                <img src="./img/iluminador.webp" alt="">
-                <span>iluminador</span>
-            </li>
-            <li>
-                <img src="./img/blush.webp" alt="">
-                <span>blush</span>
-            </li> -->
-        </ul>
     </nav>
-   </header>
-   <main id="produtos">
-    <div class="wrapper">
-        <img src="./img/batom.jpg" alt="batom">
-        <div class="Card">
-            <div>
-                <h2>COVER GIRL-LIPSTICK</h2>
-                <div class="detalhes">
-                    <p>O batom CoverGirl Colorlicious oferece uma cor rica e satisfatória em tons que você não pode deixar de desejar!</p>
-                </div>
-            </div>
-            <button class="compras">COMPRAR</button>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Os melhores produtos de beleza a sua porta!</h1>
+            <p>Descubra o universo da beleza com produtos incríveis para realçar sua maquiagem! Desde batons vibrantes até iluminadores radiantes, temos tudo para você brilhar em qualquer ocasião. Encontre sua essência, experimente novas cores e sinta-se ainda mais confiante!</p>
+            <button id="list-button" class="cta-button">Listar produtos</button>
         </div>
+        <div class="hero-image">
+            <img src="./img/mulheres1.png" alt="Mulheres felizes">
+        </div>
+    </header>
+
+    <!-- Grid de Produtos -->
+    <div class="container">
+        <div id="product-grid" class="grid"></div>
     </div>
-   </main>
-    
 </body>
 </html>
