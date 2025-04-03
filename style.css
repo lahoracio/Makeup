@@ -1,4 +1,4 @@
-/* Reset básico */
+
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +11,7 @@ body {
     min-height: 100vh;
     
 }
-/* Navbar */
+
 .navbar {
     display: flex;
     justify-content: center;
@@ -50,14 +50,14 @@ body {
     background-color: #e0d0bc;
 }
 
-/* Seção Hero */
+
 .hero {
     background-color: #dfcdbf;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 50px;
-    height: 100vh; /* Agora ocupa toda a altura da tela */
+    height: 100vh; 
     position: relative;
 }
 .hero-content {
@@ -110,11 +110,11 @@ body {
     
 }
 
-/* Grid de Produtos */
+
 .container {
     padding: 20px;
     background-color: #dfcdbf;
-    display: none; /* Escondido inicialmente */
+    display: none;
 }
 
 .grid {

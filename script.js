@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    // Elementos do DOM
     const searchBar = document.getElementById("search-bar");
     const searchButton = document.getElementById("search-button");
     const listButton = document.getElementById("list-button");
@@ -8,13 +7,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     const modal = document.getElementById("product-modal");
     const heroSection = document.querySelector(".hero");
 
-    // Configurações
     const apiUrl = "https://makeup-api.herokuapp.com/api/v1/products.json";
     const popularBrands = ["maybelline", "l'oreal", "revlon", "nyx", "covergirl", "mac"];
     let allProducts = [];
     let isLoading = false;
 
-    // Função para carregar produtos com cache
+    
     async function loadProducts() {
         if (allProducts.length > 0) return allProducts;
         if (isLoading) return;
@@ -38,7 +36,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     }
 
-    // Processa os produtos recebidos da API
+
     function processProducts(products) {
         return products
             .filter(product => product && product.name)
@@ -53,7 +51,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             }));
     }
 
-    // Formata nomes de marca
+    
     function formatBrandName(brand) {
         const brandFormats = {
             "sally b's skin yummies": "Sally B's",
@@ -80,7 +78,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
-    // Função segura para imagens
+
     function getSafeImageLink(image_link) {
         const blockedDomains = ['purpicks.com', 'example.com'];
         const isBlocked = blockedDomains.some(domain => image_link?.includes(domain));
@@ -101,7 +99,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         return image_link;
     }
 
-    // Mostra estado de carregamento
+    
     function showLoading() {
         productGrid.innerHTML = `
             <div class="loading">
@@ -111,7 +109,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         `;
     }
 
-    // Mostra mensagem de erro
+
     function showError(message) {
         productGrid.innerHTML = `
             <div class="error-message">
@@ -121,7 +119,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         `;
     }
 
-    // Filtra produtos
     function filterProducts(products, query) {
         if (!products || !Array.isArray(products)) return [];
         if (!query) return products;
@@ -131,7 +128,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         );
     }
 
-    // Renderiza os produtos
+  
     function renderProducts(products) {
         if (!products || products.length === 0) {
             productGrid.innerHTML = "<p class='no-results'>Nenhum produto encontrado.</p>";
@@ -151,7 +148,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         showContainer();
     }
 
-    // Na função createProductCard, substitua o conteúdo por:
+    
 function createProductCard(product) {
     const card = document.createElement("div");
     card.className = "card";
@@ -169,7 +166,6 @@ function createProductCard(product) {
         </div>
     `;
     
-    // Abre modal ao clicar no card
     card.addEventListener("click", () => {
         showProductModal(product);
     });
@@ -177,13 +173,12 @@ function createProductCard(product) {
     return card;
 }
 
-    // Mostra o container principal
     function showContainer() {
         container.style.display = "block";
         heroSection.style.display = "none";
     }
 
-    // Modal de produto
+
     function showProductModal(product) {
         modal.innerHTML = `
             <div class="modal-content">
@@ -211,12 +206,12 @@ function createProductCard(product) {
         document.querySelector(".back-button").addEventListener("click", closeModal);
     }
 
-    // Fecha o modal
+  
     function closeModal() {
         modal.style.display = "none";
     }
 
-    // Event Listeners
+  
     searchBar.addEventListener("focus", () => {
         searchBar.placeholder = `Ex: ${popularBrands.join(", ")}...`;
     });
